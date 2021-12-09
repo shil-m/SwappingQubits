@@ -165,7 +165,7 @@ def next_frame(input):
             qc_transpile=transpile(qc,coupling_map=[[0,1],[1,2],[2,3],[3,4]],initial_layout= layout2,optimization_level=0)
             if qc_transpile.count_ops().get('swap')==2:
                 result=1
-            if qc_transpile.count_ops().get('swap')>=7:
+            if qc_transpile.count_ops().get('swap')>2:
                 result=2
             if result==1:
                 algotext.width=0
